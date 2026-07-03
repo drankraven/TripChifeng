@@ -5,115 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="沈阳出发自驾通辽、赤峰 4 天 3 晚路线，结合小红书采样、TripStar 规划方法和交互地图。"
+      content="沈阳出发，经奈曼、赤峰市区、玉龙沙湖、辽上京、通辽市区，到铁岭昌图县的纯电自驾旅行规划。"
     />
-    <title>沈阳-通辽-赤峰 4天3晚自驾路书</title>
-    <link rel="preconnect" href="https://unpkg.com" />
-    <link rel="preconnect" href="https://tile.openstreetmap.org" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIINfQarEjY2Fq6N8UO5dvkaY8xR+MlHhA="
-      crossorigin=""
-    />
+    <title>沈阳-奈曼-赤峰-通辽-昌图 纯电自驾路书</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main class="app-shell">
       <section class="planner">
         <header class="masthead">
-          <p class="eyebrow">TripStar-style roadbook</p>
-          <h1>沈阳出发，通辽轻停留，赤峰中南线 4 天 3 晚</h1>
+          <p class="eyebrow">EV roadbook</p>
+          <h1>沈阳出发，奈曼、赤峰、玉龙沙湖、辽上京、通辽，到昌图收尾</h1>
           <p class="lede">
-            避开你已经去过的库伦三大寺、银沙湾和大青沟。路线把小红书高频的赤峰自驾经验压缩成更稳的环线，不硬塞乌兰布统、达达线全段和达里湖北线。
+            按你指定的新顺序重排：不返沈阳，终点落在铁岭昌图县。核心策略是把纯电 300 公里续航拆成“城市/旗县补能 + 景点轻玩”，避免在景区或长县道上低电量焦虑。
           </p>
           <div class="stats" aria-label="路线概览">
             <div>
-              <strong>约 1450-1600 km</strong>
-              <span>全程估算</span>
-            </div>
-            <div>
-              <strong>3 个落脚点</strong>
-              <span>通辽 / 翁牛特 / 宁城</span>
+              <strong>约 1350-1500 km</strong>
+              <span>单向串联估算</span>
             </div>
             <div>
               <strong>4 天 3 晚</strong>
-              <span>每天 2-3 个核心点</span>
+              <span>推荐压缩版</span>
+            </div>
+            <div>
+              <strong>300 km EV</strong>
+              <span>按 180-220 km 补能节奏</span>
             </div>
           </div>
         </header>
 
         <section class="section-block">
           <div class="section-heading">
-            <p class="eyebrow">XHS extraction</p>
-            <h2>小红书采样提炼</h2>
+            <p class="eyebrow">Route logic</p>
+            <h2>路线取舍</h2>
           </div>
           <div class="insight-grid">
             <article class="insight">
-              <span class="tag">高频路线</span>
-              <h3>赤峰完整北线常见 5-6 天</h3>
-              <p>
-                采样笔记里反复出现“赤峰-玉龙沙湖-热阿线-达达线-达里湖/阿斯哈图-乌兰布统”。它很漂亮，但从沈阳出发再加通辽，4 天会被车程吃掉。
-              </p>
+              <span class="tag">不绕回头路</span>
+              <h3>先东到奈曼，再西进赤峰</h3>
+              <p>第一天不强行住赤峰，先住奈曼旗。这样沈阳到奈曼不会压到傍晚后，还能给纯电车留出中途快充和到店慢补时间。</p>
             </article>
             <article class="insight">
-              <span class="tag">通辽段</span>
-              <h3>通辽到赤峰不适合慢慢磨</h3>
-              <p>
-                采样里有人讨论 111/303 国道，也有人直言通辽-赤峰之间风景分散、农田路段多。此行优先走高速，把时间留给奈曼王府和玉龙沙湖。
-              </p>
+              <span class="tag">景点分级</span>
+              <h3>市区看文化，沙湖看日落</h3>
+              <p>赤峰市区只抓赤峰博物馆和一顿对夹，不再加红山公园深逛。玉龙沙湖安排下午到傍晚，体验效率更高。</p>
             </article>
             <article class="insight">
-              <span class="tag">避坑</span>
-              <h3>玉龙沙湖住宿和项目要提前定</h3>
-              <p>
-                多篇笔记提到沙漠项目分开收费、节假日住宿紧张、夜间蚊虫多。建议日落前入园，景区酒店或乌丹镇二选一，不要夜路赶到赤峰市区。
-              </p>
+              <span class="tag">补能优先</span>
+              <h3>不把电量赌在景区</h3>
+              <p>关键补能点放在阜新/彰武、奈曼旗、赤峰市区、乌丹镇或景区酒店、林东镇、通辽市区。每段都留 20% 以上余量。</p>
             </article>
           </div>
-          <details class="source-panel">
-            <summary>采样说明与代表笔记</summary>
-            <p>
-              已用用户提供的小红书 Cookie，通过非内置 headless Edge 检索关键词：
-              赤峰自驾游攻略、沈阳赤峰自驾、通辽赤峰自驾路线、玉龙沙湖攻略、喀喇沁亲王府攻略、奈曼王府攻略。
-              采样到搜索页和 20 篇详情页；页面只保留标题级引用和路线结论，不转载长正文。
-            </p>
-            <ul class="source-list">
-              <li><a href="https://www.xiaohongshu.com/explore/6a46509500000000060350db" target="_blank" rel="noreferrer">【赤峰自驾】五天四晚｜完整时间表</a></li>
-              <li><a href="https://www.xiaohongshu.com/explore/6703e5c3000000002c01764d" target="_blank" rel="noreferrer">通辽-赤峰国庆四日游</a></li>
-              <li><a href="https://www.xiaohongshu.com/explore/68b51a21000000001d017765" target="_blank" rel="noreferrer">沈阳-赤峰三天两晚</a></li>
-              <li><a href="https://www.xiaohongshu.com/explore/6a2cc84f00000000220271b8" target="_blank" rel="noreferrer">通辽到赤峰自驾路线选 111 国道还是 303 国道</a></li>
-              <li><a href="https://www.xiaohongshu.com/explore/69cfdd9b0000000021011fe2" target="_blank" rel="noreferrer">五一6天5晚沈阳→赤峰自驾攻略</a></li>
-              <li><a href="https://www.xiaohongshu.com/explore/6a4143290000000017029098" target="_blank" rel="noreferrer">沈阳自驾·赤峰｜一天跑6个沙漠</a></li>
-            </ul>
-          </details>
         </section>
 
         <section class="section-block">
           <div class="section-heading">
             <p class="eyebrow">Itinerary</p>
-            <h2>日程安排</h2>
+            <h2>推荐 4 天 3 晚</h2>
           </div>
           <div id="itinerary" class="timeline" aria-live="polite"></div>
         </section>
 
         <section class="section-block">
           <div class="section-heading">
-            <p class="eyebrow">Budget & booking</p>
-            <h2>预算和预订</h2>
+            <p class="eyebrow">Charging</p>
+            <h2>纯电补能计划</h2>
+          </div>
+          <div id="charging" class="charge-grid"></div>
+          <div class="notice">
+            纯电 300 公里按高速实际 210-250 公里可用里程来规划。出发前一天用高德新能源、国网 e 充电、特来电、星星充电同时确认站点状态；高速服务区排队或坏枪时，优先下高速进县城补能。
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <p class="eyebrow">Comfort option</p>
+            <h2>更舒服的 5 天版本</h2>
           </div>
           <div class="info-grid">
             <div class="info-box">
-              <h3>预算估算</h3>
-              <p>按 2 人 1 车：油费和高速约 1300-1800 元，住宿约 900-1600 元，餐饮约 800-1200 元，门票和项目约 900-1800 元。</p>
+              <h3>D1 住奈曼</h3>
+              <p>沈阳到奈曼王府，下午只逛王府和大沁他拉镇，车辆过夜补能。</p>
             </div>
             <div class="info-box">
-              <h3>预订优先级</h3>
-              <p>先订翁牛特/玉龙沙湖和宁城温泉住宿，再确认博物馆闭馆日、喀喇沁亲王府开放情况、玉龙沙湖项目和接驳安排。</p>
+              <h3>D2 住赤峰市区</h3>
+              <p>奈曼到赤峰，赤峰博物馆、红山公园或市区美食慢慢来，住带充电的市区酒店。</p>
             </div>
             <div class="info-box">
-              <h3>行车策略</h3>
-              <p>D2 和 D4 是长距离移动日。不要当天再临时加乌兰布统或达里湖；草原北线单独留 3-5 天体验会舒服很多。</p>
+              <h3>D3-D5 不赶夜路</h3>
+              <p>D3 玉龙沙湖，D4 辽上京到通辽，D5 通辽市区到昌图。体验会比 4 天版松很多。</p>
             </div>
           </div>
         </section>
@@ -122,8 +103,8 @@
       <aside class="map-panel">
         <div class="map-header">
           <div>
-            <p class="eyebrow">Route map</p>
-            <h2>路线地图</h2>
+            <p class="eyebrow">Offline map</p>
+            <h2>本地路线示意</h2>
           </div>
           <div class="day-filter" aria-label="按天查看路线">
             <button class="filter-button is-active" data-day="all">全程</button>
@@ -133,31 +114,13 @@
             <button class="filter-button" data-day="4">D4</button>
           </div>
         </div>
-        <div id="map" class="map"></div>
-        <div class="route-strip" aria-label="路线示意图">
-          <svg viewBox="0 0 760 132" role="img">
-            <path class="route-back" d="M64 72 C148 22 210 36 272 70 S382 112 452 74 562 16 648 58 726 92 702 106" />
-            <path class="route-front" d="M64 72 C148 22 210 36 272 70 S382 112 452 74 562 16 648 58 726 92 702 106" />
-            <g class="route-dot" transform="translate(64 72)"><circle r="9"/><text y="28">沈阳</text></g>
-            <g class="route-dot" transform="translate(210 36)"><circle r="9"/><text y="-16">通辽</text></g>
-            <g class="route-dot" transform="translate(328 96)"><circle r="9"/><text y="28">奈曼</text></g>
-            <g class="route-dot" transform="translate(452 74)"><circle r="9"/><text y="-16">玉龙沙湖</text></g>
-            <g class="route-dot" transform="translate(562 28)"><circle r="9"/><text y="28">赤峰</text></g>
-            <g class="route-dot" transform="translate(648 58)"><circle r="9"/><text y="-16">喀喇沁</text></g>
-            <g class="route-dot" transform="translate(702 106)"><circle r="9"/><text y="-16">宁城</text></g>
-          </svg>
-        </div>
+        <div id="map" class="offline-map"></div>
         <div class="map-note">
-          地图为路线示意，点位来自公开地理编码和人工校准；实际驾驶请以高德、百度或车机实时导航为准。
+          这张图用本地经纬度绘制，不依赖在线瓦片；它用于看顺序和相对位置。实际驾驶、充电站状态和路况请以导航 App 当天结果为准。
         </div>
       </aside>
     </main>
 
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
     <script src="./app.js"></script>
   </body>
 </html>

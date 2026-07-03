@@ -1,65 +1,89 @@
 const routeDays = [
   {
     day: 1,
-    title: "沈阳到通辽，先把节奏放稳",
-    drive: "约 310-340 km / 3.5-4.5 h",
-    stay: "住通辽市区",
+    title: "沈阳 -> 奈曼王府 -> 奈曼旗住宿",
+    drive: "约 330-370 km / 4.5-5.5 h，不含充电",
+    stay: "住奈曼旗大沁他拉镇",
+    meals: "午餐在阜新或彰武补能时解决；晚餐选奈曼旗蒙餐、锅茶、手把肉或本地家常菜。",
+    hotel: "住大沁他拉镇核心区，优先选有地面停车场、附近 1-2 公里内有快充站、含早餐的商务酒店。",
+    charging: "沈阳满电出发；阜新或彰武补到 85%-90%；到奈曼后过夜补能到 90% 左右。",
     summary:
-      "早出发，中午后抵达通辽。下午选择科尔沁博物馆或吉祥密乘大乐林寺，傍晚走西拉木伦公园、河边夜市。今天不去库伦三大寺、银沙湾、大青沟。",
-    notes: "若碰到周一闭馆，就把博物馆换成市区寺院和公园。晚餐选蒙餐、锅茶、牛肉干和对夹类小吃即可。",
-    stops: ["沈阳", "通辽市区", "科尔沁博物馆", "西拉木伦公园"]
+      "第一站只抓奈曼王府。沈阳到奈曼对 300 公里纯电已经偏紧，中途必须补能，不建议当天再赶赤峰。下午逛奈曼王府 1.5 小时即可，晚上把车和人都充满。",
+    stops: ["沈阳", "阜新/彰武补能", "奈曼王府", "大沁他拉镇"]
   },
   {
     day: 2,
-    title: "通辽到奈曼，再切到玉龙沙湖看日落",
-    drive: "约 430-500 km / 5.5-6.5 h",
-    stay: "住玉龙沙湖景区或乌丹镇",
+    title: "奈曼 -> 赤峰市区 -> 玉龙沙湖",
+    drive: "约 330-380 km / 5-6 h，不含游玩",
+    stay: "住玉龙沙湖景区酒店或乌丹镇",
+    meals: "午餐在赤峰市区吃对夹、蒙餐或清真小馆；晚餐优先乌丹镇，景区内餐饮作为备选。",
+    hotel: "预算足够住玉龙沙湖景区或木屋/集装箱类酒店，看日落和星空方便；想稳妥补能和吃饭，住乌丹镇更实用。",
+    charging: "奈曼满电出发；赤峰市区午餐快充到 80%-90%；到乌丹镇或景区酒店后再补到 90%。",
     summary:
-      "早上从通辽出发，奈曼王府停留 1-1.5 小时，下午到玉龙沙湖。把沙漠项目和湖边日落作为主体验，避免晚上再疲劳进赤峰市区。",
-    notes: "小红书采样里玉龙沙湖争议集中在门票、项目和住宿。若预算敏感，可只选核心项目；若住景区，提前确认接驳、餐饮和驱蚊。",
-    stops: ["通辽", "奈曼王府", "玉龙沙湖", "乌丹镇"]
+      "第二站赤峰市区以赤峰博物馆为主，若遇周一闭馆就改红山公园或市区轻逛。下午去第三站玉龙沙湖，把沙漠、湖边和日落放在同一段完成。",
+    stops: ["奈曼旗", "赤峰博物馆", "赤峰午餐补能", "玉龙沙湖"]
   },
   {
     day: 3,
-    title: "沙湖到赤峰市区，再走喀喇沁和宁城温泉",
-    drive: "约 300-360 km / 4.5-5.5 h",
-    stay: "住宁城热水镇",
+    title: "玉龙沙湖 -> 辽上京 -> 通辽市区",
+    drive: "约 470-540 km / 6.5-8 h，是全程最累一天",
+    stay: "住通辽市区",
+    meals: "早餐在酒店；午餐在林东镇或辽上京博物馆周边；晚餐到通辽吃蒙餐、烧烤或买牛肉干奶茶。",
+    hotel: "通辽建议住万达广场、西拉木伦公园或火车站南广场一带，吃饭和快充选择更多。",
+    charging: "玉龙/乌丹满电出发；林东镇参观辽上京前后补到 85%-90%；若到开鲁或阿旗天山镇电量低于 45%，再补 20-30 分钟；通辽过夜补满。",
     summary:
-      "上午从翁牛特进赤峰市区，赤峰博物馆看红山文化、契丹辽文化。午后去喀喇沁亲王府，傍晚到宁城热水镇泡温泉。",
-    notes: "这天是人文和休整日。若亲王府临时维修或闭馆，把时间转给马鞍山森林公园、美林谷或市区红山公园。",
-    stops: ["玉龙沙湖", "赤峰博物馆", "喀喇沁亲王府", "宁城热水镇"]
+      "第四站辽上京建议组合辽上京遗址 + 辽上京博物馆，不必在遗址区久走。今天长距离横穿赤峰北部到通辽，景点要克制，补能要前置。",
+    stops: ["玉龙沙湖", "林东镇补能", "辽上京遗址", "通辽市区"]
   },
   {
     day: 4,
-    title: "宁城短停辽中京，直接返沈阳",
-    drive: "约 430-500 km / 5.5-6.5 h",
-    stay: "返程",
+    title: "通辽市区 -> 铁岭昌图县终点",
+    drive: "约 240-290 km / 3.5-4.5 h",
+    stay: "终点昌图县，不返沈阳",
+    meals: "上午通辽市区轻逛后早午餐；下午到昌图，可安排铁锅炖、烧烤或东北家常菜。",
+    hotel: "若在昌图过夜，住县城主城区，优先靠近高速口或商圈，方便第二天继续出发。",
+    charging: "通辽满电出发基本可到昌图；若天气冷、顶风或满载，在双辽/科左后旗一带备选补能；到昌图后把车补到 70% 以上。",
     summary:
-      "上午只做一个短停：辽中京遗址、法轮寺或大明塔一带择一。午前上高速返沈阳，不再加大景区。",
-    notes: "最后一天保守一点更舒服。采样里的 3 日/4 日北线通常需要早出晚归，返程日再加达里湖、乌兰布统会明显超负荷。",
-    stops: ["宁城", "辽中京遗址", "沈阳"]
+      "第五站通辽市区只做半日：科尔沁博物馆、大乐林寺、西拉木伦公园三选一到二。午后开到昌图县收尾，避免把最后一天变成长途疲劳日。",
+    stops: ["通辽市区", "科尔沁博物馆/大乐林寺", "双辽或科左后旗备选补能", "昌图县"]
   }
 ];
 
-const locations = [
-  { name: "沈阳", day: 1, lat: 41.8057, lng: 123.4315, type: "city" },
-  { name: "通辽市区", day: 1, lat: 43.6529, lng: 122.2434, type: "stay" },
-  { name: "科尔沁博物馆", day: 1, lat: 43.658, lng: 122.265, type: "culture" },
-  { name: "奈曼王府", day: 2, lat: 42.845859, lng: 120.644672, type: "culture" },
-  { name: "玉龙沙湖", day: 2, lat: 43.048361, lng: 119.060387, type: "nature" },
-  { name: "乌丹镇", day: 2, lat: 42.936, lng: 119.02, type: "stay" },
-  { name: "赤峰博物馆", day: 3, lat: 42.246122, lng: 118.893629, type: "culture" },
-  { name: "喀喇沁亲王府", day: 3, lat: 41.838282, lng: 118.500461, type: "culture" },
-  { name: "宁城热水镇", day: 3, lat: 41.59, lng: 119.28, type: "stay" },
-  { name: "辽中京遗址", day: 4, lat: 41.57, lng: 119.18, type: "culture" }
+const chargePlan = [
+  {
+    day: "D1",
+    legs: "沈阳 -> 阜新/彰武 -> 奈曼",
+    rule: "第一段不要超过 180-220 km；在阜新或彰武吃饭快充，奈曼过夜补能。"
+  },
+  {
+    day: "D2",
+    legs: "奈曼 -> 赤峰 -> 玉龙沙湖",
+    rule: "赤峰市区午餐时补能最稳；不要指望到沙湖后再临时找枪。"
+  },
+  {
+    day: "D3",
+    legs: "玉龙沙湖 -> 林东/辽上京 -> 通辽",
+    rule: "林东镇是关键补能点；林东到通辽偏长，开鲁或阿旗天山镇做备选。"
+  },
+  {
+    day: "D4",
+    legs: "通辽 -> 昌图",
+    rule: "通辽满电出发；到昌图后补能，为后续行程留余量。"
+  }
 ];
 
-const dayRoutes = {
-  1: ["沈阳", "通辽市区", "科尔沁博物馆"],
-  2: ["通辽市区", "奈曼王府", "玉龙沙湖", "乌丹镇"],
-  3: ["乌丹镇", "赤峰博物馆", "喀喇沁亲王府", "宁城热水镇"],
-  4: ["宁城热水镇", "辽中京遗址", "沈阳"]
-};
+const points = [
+  { name: "沈阳", day: 1, lat: 41.8057, lng: 123.4315, kind: "start" },
+  { name: "阜新/彰武补能", day: 1, lat: 42.02, lng: 121.67, kind: "charge" },
+  { name: "奈曼王府", day: 1, lat: 42.845859, lng: 120.644672, kind: "spot" },
+  { name: "赤峰市区", day: 2, lat: 42.246122, lng: 118.893629, kind: "city" },
+  { name: "玉龙沙湖", day: 2, lat: 43.048361, lng: 119.060387, kind: "spot" },
+  { name: "林东镇/辽上京", day: 3, lat: 43.963901, lng: 119.390691, kind: "spot" },
+  { name: "开鲁备选补能", day: 3, lat: 43.60, lng: 121.32, kind: "charge" },
+  { name: "通辽市区", day: 3, lat: 43.6529, lng: 122.2434, kind: "city" },
+  { name: "双辽备选补能", day: 4, lat: 43.52, lng: 123.50, kind: "charge" },
+  { name: "昌图县", day: 4, lat: 42.97835, lng: 123.94928, kind: "end" }
+];
 
 const colors = {
   1: "#0f766e",
@@ -79,7 +103,11 @@ function renderItinerary() {
             <h3>${item.title}</h3>
             <div class="timeline-meta">${item.drive} · ${item.stay}</div>
             <p>${item.summary}</p>
-            <p>${item.notes}</p>
+            <div class="detail-grid">
+              <div><strong>就餐</strong><span>${item.meals}</span></div>
+              <div><strong>住宿</strong><span>${item.hotel}</span></div>
+              <div><strong>补能</strong><span>${item.charging}</span></div>
+            </div>
             <ul class="stop-list">
               ${item.stops.map((stop) => `<li>${stop}</li>`).join("")}
             </ul>
@@ -90,88 +118,81 @@ function renderItinerary() {
     .join("");
 }
 
-function markerHtml(location) {
-  return `
-    <div class="popup-title">${location.name}</div>
-    <div class="popup-meta">D${location.day} · ${location.type}</div>
+function renderCharging() {
+  const container = document.querySelector("#charging");
+  container.innerHTML = chargePlan
+    .map(
+      (item) => `
+        <article class="charge-card">
+          <strong>${item.day}</strong>
+          <h3>${item.legs}</h3>
+          <p>${item.rule}</p>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function project(point, bounds, width, height, padding) {
+  const x = padding + ((point.lng - bounds.minLng) / (bounds.maxLng - bounds.minLng)) * (width - padding * 2);
+  const y = padding + ((bounds.maxLat - point.lat) / (bounds.maxLat - bounds.minLat)) * (height - padding * 2);
+  return { x, y };
+}
+
+function renderMap(selectedDay = "all") {
+  const map = document.querySelector("#map");
+  const visiblePoints = selectedDay === "all" ? points : points.filter((point) => point.day === Number(selectedDay));
+  const pathPoints = selectedDay === "all" ? points : points.filter((point) => point.day === Number(selectedDay));
+  const boundsSource = visiblePoints.length > 1 ? visiblePoints : points;
+  const bounds = {
+    minLat: Math.min(...boundsSource.map((point) => point.lat)),
+    maxLat: Math.max(...boundsSource.map((point) => point.lat)),
+    minLng: Math.min(...boundsSource.map((point) => point.lng)),
+    maxLng: Math.max(...boundsSource.map((point) => point.lng))
+  };
+  const width = 820;
+  const height = 620;
+  const padding = 74;
+  const projected = pathPoints.map((point) => ({ ...point, ...project(point, bounds, width, height, padding) }));
+  const allProjected = visiblePoints.map((point) => ({ ...point, ...project(point, bounds, width, height, padding) }));
+  const pathD = projected
+    .map((point, index) => `${index === 0 ? "M" : "L"} ${point.x.toFixed(1)} ${point.y.toFixed(1)}`)
+    .join(" ");
+
+  map.innerHTML = `
+    <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="沈阳到昌图单向自驾路线示意图">
+      <rect class="map-bg" x="0" y="0" width="${width}" height="${height}" rx="18" />
+      <path class="grid-line" d="M80 120 H740 M80 260 H740 M80 400 H740 M180 70 V550 M360 70 V550 M540 70 V550 M700 70 V550" />
+      <path class="route-shadow" d="${pathD}" />
+      <path class="route-line" d="${pathD}" />
+      ${allProjected
+        .map(
+          (point, index) => `
+            <g class="map-point ${point.kind}" transform="translate(${point.x.toFixed(1)} ${point.y.toFixed(1)})">
+              <circle r="${point.kind === "charge" ? 10 : 13}" style="--point-color:${colors[point.day]};" />
+              <text class="point-index" y="5">${point.kind === "charge" ? "电" : index + 1}</text>
+              <text class="point-name" x="0" y="${point.y < 110 ? 34 : -24}">${point.name}</text>
+            </g>
+          `
+        )
+        .join("")}
+      <text class="map-axis" x="38" y="56">北</text>
+      <text class="map-caption" x="40" y="590">本地示意图：按经纬度缩放，显示顺序、方位和补能节点</text>
+    </svg>
   `;
 }
 
-function buildMap() {
-  const map = L.map("map", {
-    scrollWheelZoom: false,
-    zoomControl: true
-  }).setView([42.45, 120.55], 7);
-
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 18,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(map);
-
-  const markers = [];
-  const lines = [];
-  const byName = Object.fromEntries(locations.map((location) => [location.name, location]));
-
-  locations.forEach((location) => {
-    const marker = L.circleMarker([location.lat, location.lng], {
-      radius: location.type === "stay" ? 8 : 6,
-      color: "#ffffff",
-      weight: 2,
-      fillColor: colors[location.day],
-      fillOpacity: 0.96
-    })
-      .bindPopup(markerHtml(location))
-      .addTo(map);
-    marker.day = location.day;
-    markers.push(marker);
-  });
-
-  Object.entries(dayRoutes).forEach(([day, names]) => {
-    const points = names.map((name) => byName[name]).filter(Boolean).map((point) => [point.lat, point.lng]);
-    const line = L.polyline(points, {
-      color: colors[day],
-      weight: 4,
-      opacity: 0.78,
-      dashArray: day === "4" ? "8 8" : null
-    }).addTo(map);
-    line.day = Number(day);
-    lines.push(line);
-  });
-
-  const bounds = L.latLngBounds(locations.map((location) => [location.lat, location.lng]));
-  map.fitBounds(bounds, { padding: [28, 28] });
-  L.control.scale({ imperial: false }).addTo(map);
-  setTimeout(() => {
-    map.invalidateSize();
-    map.fitBounds(bounds, { padding: [28, 28] });
-  }, 250);
-
+function bindFilters() {
   document.querySelectorAll(".filter-button").forEach((button) => {
     button.addEventListener("click", () => {
-      const selected = button.dataset.day;
       document.querySelectorAll(".filter-button").forEach((item) => item.classList.remove("is-active"));
       button.classList.add("is-active");
-
-      markers.forEach((marker) => {
-        const visible = selected === "all" || marker.day === Number(selected);
-        if (visible && !map.hasLayer(marker)) marker.addTo(map);
-        if (!visible && map.hasLayer(marker)) marker.removeFrom(map);
-      });
-
-      lines.forEach((line) => {
-        const visible = selected === "all" || line.day === Number(selected);
-        if (visible && !map.hasLayer(line)) line.addTo(map);
-        if (!visible && map.hasLayer(line)) line.removeFrom(map);
-      });
-
-      const visibleLocations =
-        selected === "all" ? locations : locations.filter((location) => location.day === Number(selected));
-      map.fitBounds(L.latLngBounds(visibleLocations.map((location) => [location.lat, location.lng])), {
-        padding: [36, 36]
-      });
+      renderMap(button.dataset.day);
     });
   });
 }
 
 renderItinerary();
-buildMap();
+renderCharging();
+renderMap();
+bindFilters();
