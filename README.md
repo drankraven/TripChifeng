@@ -10,3 +10,7 @@
 - 地图改为本地 SVG 经纬度示意图，不依赖在线瓦片，避免地图缺失。
 
 本地预览可以直接打开 `index.html`。
+
+GitHub Pages 地址：
+
+https://drankraven.github.io/TripChifeng/
