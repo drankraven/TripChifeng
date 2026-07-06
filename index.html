@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="从巴林左旗出发，含真寂之寺、辽上京博物馆、达达线、达里诺尔湖、阿斯哈图石林、热阿线黄岗梁、热水塘温泉、乌兰布统。7.7周二-7.10周五中午回沈阳。星图云交互地图。" />
-    <title>巴林左旗→真寂之寺→达达线→热阿线→乌兰布统→沈阳 · 4天纯电路书</title>
+    <meta name="description" content="巴林左旗→真寂之寺→达达线→热阿线→赤峰市区→沈阳。4天纯电路书，含每日天气预报。" />
+    <title>巴林左旗·真寂之寺·达达线·赤峰→沈阳 · 4天纯电路书（7.7-7.10）</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
@@ -13,108 +13,104 @@
     <main class="app-shell">
       <section class="planner">
         <header class="masthead">
-          <p class="eyebrow">Chifeng roadbook v5 · 真寂之寺</p>
-          <h1>巴林左旗 → 真寂之寺 → 达达线 → 乌兰布统 → 沈阳 · 4 天纯电路书</h1>
+          <p class="eyebrow">Chifeng roadbook v6 · 赤峰收官</p>
+          <h1>巴林左旗 → 真寂之寺 → 达达线 → 赤峰 → 沈阳 · 4 天纯电路书</h1>
           <p class="lede">
-            D1 加入<strong>真寂之寺</strong>（辽代石窟，必须去）+ 博物馆 + 遗址，从"太悠闲"变成饱满一天。达里诺尔湖留到 D2 早晨第一站（南岸开放 8:00-18:00，且达来诺日镇有新装充电桩）。D2 虽然 305 km 但全程是景观公路——达达线本身就是景点。
+            乌兰布统换为<strong>赤峰市区</strong>（辽代历史文化博物馆 + 红山公园），因为你已去过通辽草原。赤峰→沈阳仅 280 km，D4 中午轻松抵达。每日天气已从中国天气网拉取——整体来看 4 天都有小雨转晴/多云，适合出行，但达达线注意路面湿滑。
           </p>
           <div class="stats">
-            <div><strong>4 天 3 晚</strong><span>7.7 周二 07:30 – 7.10 周五 13:15</span></div>
-            <div><strong>约 1120 km</strong><span>D1 174km · D2 305km · D3 190km · D4 475km</span></div>
-            <div><strong>真寂之寺 + 达达线</strong><span>星图云交互地图 · POI待开通</span></div>
+            <div><strong>4 天 3 晚</strong><span>7.7 周二 – 7.10 周五中午到沈阳</span></div>
+            <div><strong>约 1070 km</strong><span>D1 174·D2 305·D3 310·D4 280</span></div>
+            <div><strong>🌤 小雨转晴为主</strong><span>17-31℃ 温和 | D3 最好天</span></div>
           </div>
         </header>
 
         <section class="section-block">
-          <div class="section-heading"><p class="eyebrow">Key decisions</p><h2>这次改了什么 & 为什么</h2></div>
+          <div class="section-heading"><p class="eyebrow">Weather overview</p><h2>🌤 全程天气预报（来源：中国天气网 7.6 发布）</h2></div>
+          <div class="info-grid" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
+            <div class="info-box">
+              <h3>D1 · 7.7 周二</h3>
+              <p style="margin:4px 0;">小雨转多云<br>28℃ / 17℃<br>风力 &lt;3级</p>
+              <span class="tag" style="background:var(--blue);">真寂之寺防滑</span>
+            </div>
+            <div class="info-box">
+              <h3>D2 · 7.8 周三</h3>
+              <p style="margin:4px 0;">小雨转多云<br>27℃ / 18℃<br>风力 &lt;3级</p>
+              <span class="tag" style="background:var(--teal);">柔光拍草原</span>
+            </div>
+            <div class="info-box">
+              <h3>D3 · 7.9 周四</h3>
+              <p style="margin:4px 0;">小雨转晴 ☀️<br>30℃ / 19℃<br>风力 &lt;3级</p>
+              <span class="tag" style="background:var(--rust);">⭐ 最好的一天</span>
+            </div>
+            <div class="info-box">
+              <h3>D4 · 7.10 周五</h3>
+              <p style="margin:4px 0;">小雨转阴<br>31℃ / 21℃<br>风力 &lt;3级</p>
+              <span class="tag" style="background:var(--gold);">高速正常开</span>
+            </div>
+          </div>
+          <div class="notice" style="margin-top:14px;">
+            ⚠️ 四天均带「小雨」前缀——<b>小雨一般在清晨/上午</b>，午后转多云或放晴。<br>
+            💡 应对：每天带一件薄冲锋衣/防风外套；D1 石窟注意石阶湿滑；D2 达达线新手慎开弯道；D3 是拍照黄金天！<br>
+            📊 气温 17-31℃ 舒适，草原早晚凉注意保暖。全部 &lt;3级风，户外活动友好。
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><p class="eyebrow">Key changes</p><h2>乌兰布统 → 赤峰市区</h2></div>
           <div class="insight-grid">
             <article class="insight">
-              <span class="tag">真寂之寺 08:30</span>
-              <h3>D1 首站：辽代石窟全国独一份</h3>
-              <p>真寂之寺是辽代开凿的石窟群（112 尊佛像），林东南 14 km，08:00 开门（¥30）。放在 D1 首站：早去不晒、人少。游玩 1.25 h 后恰好赶回林东 10:15 入博物馆（09:00-12:00 上午场）。D1 现在 4 个景点 + 160 km 长途，不再悠闲。</p>
+              <span class="tag">赤峰收官</span>
+              <h3>辽代历史文化博物馆 + 红山公园</h3>
+              <p>乌兰布统草原换为赤峰市区两站：辽代历史文化博物馆（赤峰博物馆南馆，2023 年开放，43968㎡，AAA）和红山公园（免费，全城地标，山顶看赤峰全景）。D3 下午游完博物馆后登红山看日落。</p>
             </article>
             <article class="insight">
-              <span class="tag">达里诺尔南岸·有桩</span>
-              <h3>达来诺日镇 3 台新装充电桩</h3>
-              <p>达来诺日镇达里湖度假中心已审批安装 3 台充电桩（2026 年 5 月）。达里诺尔湖南岸 8:00-18:00 开放（¥120）。放在 D2 早晨第一站，走完直接上达达线。</p>
+              <span class="tag">路更短更平衡</span>
+              <h3>D3+D4 各约 280-310 km</h3>
+              <p>赤峰→沈阳仅 280 km（4h），比乌兰布统绕行短了近 200 km。D1 174·D2 305·D3 310·D4 280——四天驾驶量非常均匀，每天不超 310 km。</p>
             </article>
             <article class="insight">
-              <span class="tag">星图云POI待开通</span>
-              <h3>token 目前仅开通地图瓦片权限</h3>
-              <p>地名地址 V2.0 POI 搜索接口返回"无接口权限"（code 124）。需要在星图云控制台开通"地名地址V2.0"服务才能使用 POI 查询（充电站/酒店/餐厅叠加到地图上）。</p>
+              <span class="tag">赤峰充电密集</span>
+              <h3>D3 到市区后充电无忧</h3>
+              <p>赤峰市区国网/特来电/星星充电桩密集，D3 晚上可轻松补满为 D4 返沈阳做准备。比乌兰布统（景区无桩）省心太多。</p>
             </article>
           </div>
         </section>
 
         <section class="section-block">
-          <div class="section-heading"><p class="eyebrow">Itinerary</p><h2>4 天 3 晚（7.7 周二 07:30 – 7.10 周五 13:15）</h2></div>
+          <div class="section-heading"><p class="eyebrow">Itinerary</p><h2>4 天 3 晚（7.7 周二 – 7.10 周五中午抵沈阳）</h2></div>
           <div id="itinerary" class="timeline"></div>
         </section>
 
         <section class="section-block">
-          <div class="section-heading"><p class="eyebrow">Charging</p><h2>纯电补能 · 经棚是绝对命门</h2></div>
+          <div class="section-heading"><p class="eyebrow">Charging</p><h2>纯电补能 · 经棚 → 赤峰双核</h2></div>
           <div id="charging" class="charge-grid"></div>
           <div class="notice">
-            ⚡ <b>一句话：全程靠经棚镇。</b><br>
-            🟢 D1 林东满电 → 经棚补满（174 km）<br>
-            🟡 D2 经棚满电 → 达里诺尔(80km)→达达线(135km)→石林→热阿线→热水塘（305 km，纯电 300 续航刚好！达来诺日镇新装 3 台桩作为紧急备选）<br>
-            🟢 D3 热水塘/经棚补满 → 乌兰布统<br>
-            🟢 D4 围场县必停快充 → 沈阳<br>
-            💡 达来诺日镇达里湖度假中心充电桩（2026.5 审批，3 台）——出发前用高德/特来电确认是否已运营！
-          </div>
-        </section>
-
-        <!-- 温泉住宿 -->
-        <section class="section-block">
-          <div class="section-heading"><p class="eyebrow">Hotels</p><h2>🏨 住宿 POI 速查</h2></div>
-          <div class="info-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
-            <div class="info-box">
-              <h3>热水塘·温泉酒店</h3>
-              <p style="font-size:88%;line-height:1.6;">
-                🥇 <b>蓝天温泉大酒店</b> — 地标，24h 矿泉热水，¥350-550<br>
-                🥈 <b>金狮龙沐湾温泉</b> — 有私汤房型，¥400-650<br>
-                🥉 <b>天牧温泉小镇</b> — 户外汤池，性价比 ¥300-450<br>
-                💰 <b>林西县替代</b> — 30km 外，¥120-200
-              </p>
-            </div>
-            <div class="info-box">
-              <h3>达来诺日镇 / 达里湖边</h3>
-              <p style="font-size:88%;line-height:1.6;">
-                ⭐ <b>贡格尔河民宿</b> — 2025 开业，4.9 分 32 评，¥150-250<br>
-                🏨 <b>达里湖达里诺尔宾馆</b> — 北岸最正规，4.0 分 144 评<br>
-                🏨 <b>草原春宾馆</b> — 达来诺日镇商业街，经济型<br>
-                ⚡ <b>达里湖度假中心</b> — 有新装 3 台充电桩！
-              </p>
-            </div>
-            <div class="info-box">
-              <h3>经棚镇</h3>
-              <p style="font-size:88%;line-height:1.6;">
-                🏨 克什克腾经棚宾馆、经棚商务酒店等 — ¥150-300<br>
-                ⚡ 镇内多快充桩（国网/特来电），补能便利
-              </p>
-            </div>
-            <div class="info-box">
-              <h3>乌兰布统 / 围场县</h3>
-              <p style="font-size:88%;line-height:1.6;">
-                🏕️ 景区内木屋/蒙古包 ¥300-600（提前订！）<br>
-                🏨 围场县城 ¥150-250<br>
-                ⚡ 围场县有国网/特来电快充
-              </p>
-            </div>
-          </div>
-          <div style="margin-top:12px;font-size:88%;color:var(--muted);line-height:1.55;">
-            💡 <b>POI 升级计划</b>：待星图云地名地址 V2.0 权限开通后，可在地图上叠加以上住宿 + 充电站 + 餐厅的实时位置标记。当前需手动搜索携程/美团预订。
+            ⚡ 补能逻辑从「经棚独撑」升级为「经棚+赤峰双核」：<br>
+            🟢 D1 林东→经棚（174 km 一段，经棚补满）<br>
+            🟡 D2 经棚满电→达里诺尔+达达线+石林+热阿线→热水塘（305 km，达来诺日镇 3 台新桩备选）<br>
+            🟢 D3 热水塘/经棚补→赤峰市区（310 km，赤峰市区充电桩密集）<br>
+            🟢 D4 赤峰满电→沈阳（280 km 一口气或服务区补一次）<br>
+            ⬆️ 比原来轻松多了——D3 市区充电不再焦虑！
           </div>
         </section>
 
         <section class="section-block">
-          <div class="section-heading"><p class="eyebrow">POI API Status</p><h2>🗺️ 星图云 POI 待开通</h2></div>
-          <p style="color:var(--muted);line-height:1.7;margin:0;font-size:90%;">
-            你的 token <code>22813193061716c4d729ab41f125de23</code> 目前<b>仅开通矢量地图瓦片权限</b>（地图正常渲染）。<br>
-            调用 <code>address/v1/poi_search</code> 返回 <b>code 124: "无接口权限"</b>。<br><br>
-            👉 <b>开通步骤</b>：登录 <a href="https://open.geovisearth.com/console/key" target="_blank">星图云控制台</a> → 找到你的应用 → 在"地图服务 → 地名地址 → 地名地址V2.0"旁点击"开通"（可能需要额外付费或申请免费额度）。<br>
-            开通后我可以在右侧地图上叠加：① 沿途充电站（实心⚡标记）② 推荐酒店（🏨标记）③ 午餐推荐餐厅（🍽️标记）。右侧地图底图使用星图云矢量瓦片（已正常）。
-          </p>
+          <div class="section-heading"><p class="eyebrow">Hotels</p><h2>🏨 住宿速查</h2></div>
+          <div class="info-grid" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+            <div class="info-box">
+              <h3 style="font-size:1rem;">D1 · 经棚镇</h3>
+              <p style="font-size:88%;line-height:1.5;">🏨 经棚宾馆/商务酒店 ¥150-300<br>⚡ 镇内多快充（国网/特来电）</p>
+            </div>
+            <div class="info-box">
+              <h3 style="font-size:1rem;">D2 · 热水塘温泉</h3>
+              <p style="font-size:88%;line-height:1.5;">🥇 蓝天温泉大酒店 ¥350-550<br>🥈 金狮龙沐湾(私汤) ¥400-650<br>🥉 天牧温泉小镇 ¥300-450</p>
+            </div>
+            <div class="info-box">
+              <h3 style="font-size:1rem;">D3 · 赤峰市区</h3>
+              <p style="font-size:88%;line-height:1.5;">🏨 汉庭/如家 ¥150-250<br>🏨 全季/亚朵 ¥250-400<br>⚡ 充电桩密集（国网/特来电/星星）</p>
+            </div>
+          </div>
         </section>
       </section>
 
@@ -130,7 +126,7 @@
           </div>
         </div>
         <div id="leaflet-map" class="leaflet-map-container"></div>
-        <div class="map-note">底图：星图云矢量瓦片 | 可拖拽缩放 | 按 D1-D4 筛选 | 11 个节点（含真寂之寺）</div>
+        <div class="map-note">底图：星图云 | 11 节点 · 经棚(⚡)→赤峰(🏙️)→沈阳(🏁)</div>
       </aside>
     </main>
 
