@@ -344,8 +344,10 @@ h3 {
 
 .hour-detail {
   color: var(--muted);
-  font-size: 0.84rem;
-  line-height: 1.45;
+  font-size: 0.83rem;
+  line-height: 1.55;
+  margin-top: 2px;
+  white-space: pre-line;
 }
 
 .detail-grid {
