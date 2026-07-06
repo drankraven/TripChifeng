@@ -101,7 +101,13 @@
           </div>
         </div>
         <div id="leaflet-map" class="leaflet-map-container"></div>
-        <div class="map-note">底图：星图云 | 10 节点 · 林东→经棚⚡→达里湖→石林→经棚→赤峰→沈阳 | 无重复路</div>
+        <div class="poi-legend">
+          <span class="legend-label">POI：</span>
+          <button class="poi-toggle" data-kind="charge"><span class="poi-dot" style="background:#e8983e"></span>充电桩</button>
+          <button class="poi-toggle" data-kind="hotel"><span class="poi-dot" style="background:#3b82f6"></span>酒店</button>
+          <button class="poi-toggle" data-kind="food"><span class="poi-dot" style="background:#ef4444"></span>餐饮</button>
+        </div>
+        <div class="map-note">底图：星图云 | 10 路线节点 + 14 POI 标记（⚡🏨🍽️）| 无重复路</div>
       </aside>
     </main>
     <script src="./app.js"></script>

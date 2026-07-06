@@ -112,6 +112,33 @@ const points = [
 
 const colors = { 1: "#0f766e", 2: "#b4532a", 3: "#2f5f8f", 4: "#b88918" };
 
+// --- POI Data: 充电桩 · 酒店 · 餐饮 ---
+const pois = [
+  // ⚡ 充电桩
+  { name: "经棚镇充电站（国网/特来电/星星）", kind: "charge", lat: 43.254, lng: 117.502, day: 1, detail: "经棚镇核心补能点。D1/D2 必充。多个运营商，快充桩充足。" },
+  { name: "达来诺日镇充电桩（3台·未确认）", kind: "charge", lat: 43.235, lng: 116.725, day: 1, detail: "达来诺日镇新装3台充电桩，运营状态待确认，不可依赖。" },
+  { name: "赤峰市区充电站密集区", kind: "charge", lat: 42.262, lng: 118.957, day: 3, detail: "红山区/松山区充电桩密集，国网+特来电+星星。D3 晚上补满。" },
+  { name: "G45 牛营子服务区（国网）", kind: "charge", lat: 42.15, lng: 119.28, day: 4, detail: "G45大广高速赤峰境内服务区，2024年投运。D4 途中补能首选。" },
+  { name: "G45 茅荆坝服务区（国网）", kind: "charge", lat: 41.62, lng: 118.25, day: 4, detail: "河北承德段 K1000 处。南距双峰寺 53km。D4 备选补能点。" },
+  // 🏨 酒店
+  { name: "贡格尔河民宿 · 4.9分", kind: "hotel", lat: 43.232, lng: 116.718, day: 1, detail: "达来诺日镇西岗更嘎查。2025开业，32评 4.9分。¥150-250。D1 首选。" },
+  { name: "达里湖朋悦快捷宾馆 · 3.9分", kind: "hotel", lat: 43.244, lng: 116.678, day: 1, detail: "达来诺日镇渔场商业街3号。23评 3.9分。近北岸景区。" },
+  { name: "达里诺尔宾馆 · 4.0分", kind: "hotel", lat: 43.260, lng: 116.655, day: 1, detail: "北岸最正规酒店，144评 4.0分。¥200-350。D1 备选。" },
+  { name: "克什克腾宾馆/商务酒店群", kind: "hotel", lat: 43.252, lng: 117.500, day: 2, detail: "经棚镇品质酒店选择丰富。¥150-300。D2 住宿，充电方便。" },
+  { name: "赤峰红山区商务酒店群", kind: "hotel", lat: 42.260, lng: 118.955, day: 3, detail: "汉庭/如家 ¥150-250，全季/亚朵 ¥250-400。D3 住宿。" },
+  // 🍽️ 餐饮
+  { name: "林东镇蒙餐/对夹", kind: "food", lat: 43.964, lng: 119.390, day: 1, detail: "林东镇蒙餐馆：对夹、手把肉、锅茶、奶茶。D1 午餐。" },
+  { name: "达来诺日镇全鱼宴", kind: "food", lat: 43.235, lng: 116.725, day: 1, detail: "达里湖华子鱼（瓦氏雅罗鱼），咸水湖特产。D1 晚餐。" },
+  { name: "经棚镇蒙餐/铁锅炖/莜面", kind: "food", lat: 43.253, lng: 117.500, day: 2, detail: "经棚镇餐饮选择丰富。D2 晚餐。" },
+  { name: "赤峰红山区美食街", kind: "food", lat: 42.258, lng: 118.958, day: 3, detail: "对夹（头牌！）+ 涮羊肉/蒙餐。D3 晚餐。" }
+];
+
+const poiColors = {
+  charge: { bg: "#e8983e", icon: "⚡", label: "充电桩" },
+  hotel: { bg: "#3b82f6", icon: "🏨", label: "酒店" },
+  food: { bg: "#ef4444", icon: "🍽️", label: "餐饮" }
+};
+
 function renderItinerary() {
   const container = document.querySelector("#itinerary");
   container.innerHTML = routeDays
@@ -166,7 +193,8 @@ function renderCharging() {
 }
 
 // --- Leaflet Map ---
-let routeMap = null, routeLayer = null, markerGroup = null;
+let routeMap = null, routeLayer = null, markerGroup = null, poiGroup = null;
+let activeDay = "all", activePoiKinds = new Set(["charge", "hotel", "food"]);
 
 function initLeafletMap() {
   const el = typeof document !== "undefined" && document.getElementById ? document.getElementById("leaflet-map") : null;
@@ -177,34 +205,65 @@ function initLeafletMap() {
   drawAll();
 }
 
+function makeRouteIcon(bg, label, size) {
+  return L.divIcon({ className: "custom-div-icon", html: `<div style="background:${bg};color:#fff;width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:850;font-size:${size < 28 ? "11px" : "14px"};border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.3)">${label}</div>`, iconSize: [size + 6, size + 6], iconAnchor: [(size + 6) / 2, (size + 6) / 2], popupAnchor: [0, -((size + 6) / 2)] });
+}
+
+function makePoiIcon(kind) {
+  const pc = poiColors[kind]; if (!pc) return makeRouteIcon("#888", "?", 20);
+  return L.divIcon({ className: "custom-div-icon poi-icon", html: `<div style="background:${pc.bg};color:#fff;width:22px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:13px;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.25)">${pc.icon}</div>`, iconSize: [26, 26], iconAnchor: [13, 13], popupAnchor: [0, -14] });
+}
+
 function drawAll() {
   if (!routeMap) return;
   if (markerGroup) routeMap.removeLayer(markerGroup);
   if (routeLayer) routeMap.removeLayer(routeLayer);
+  if (poiGroup) routeMap.removeLayer(poiGroup);
   markerGroup = L.layerGroup().addTo(routeMap);
+  poiGroup = L.layerGroup().addTo(routeMap);
   const latlngs = points.map(p => [p.lat, p.lng]);
   routeLayer = L.polyline(latlngs, { color: "#0f766e", weight: 5, opacity: 0.85 }).addTo(routeMap);
   points.forEach((p, i) => {
     const isC = p.kind === "charge", c = colors[p.day] || "#0f766e";
-    L.marker([p.lat, p.lng], { icon: L.divIcon({ className: "custom-div-icon", html: `<div style="background:${isC ? "#b88918" : c};color:#fff;width:${isC ? 24 : 30}px;height:${isC ? 24 : 30}px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:850;font-size:${isC ? "13px" : "14px"};border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.3)">${isC ? "电" : i + 1}</div>`, iconSize: [36, 36], iconAnchor: [18, 18], popupAnchor: [0, -20] }) }).bindPopup(`<strong>${p.name}</strong>`).addTo(markerGroup);
+    L.marker([p.lat, p.lng], { icon: makeRouteIcon(isC ? "#b88918" : c, isC ? "电" : String(i + 1), isC ? 24 : 30) }).bindPopup(`<strong>${p.name}</strong>`).addTo(markerGroup);
+  });
+  // Draw filtered POIs
+  const filteredPois = pois.filter(p => activePoiKinds.has(p.kind) && (activeDay === "all" || p.day === Number(activeDay)));
+  filteredPois.forEach(p => {
+    L.marker([p.lat, p.lng], { icon: makePoiIcon(p.kind) }).bindPopup(`<strong>${poiColors[p.kind].icon} ${p.name}</strong><br><small>${p.detail}</small>`).addTo(poiGroup);
   });
   routeMap.fitBounds(L.latLngBounds(latlngs).pad(0.15));
 }
 
 function filterMap(day) {
+  activeDay = day;
   if (!routeMap) return;
   if (markerGroup) routeMap.removeLayer(markerGroup);
   if (routeLayer) routeMap.removeLayer(routeLayer);
+  if (poiGroup) routeMap.removeLayer(poiGroup);
   const f = day === "all" ? points : points.filter(p => p.day === Number(day));
   if (!f.length) return;
   markerGroup = L.layerGroup().addTo(routeMap);
+  poiGroup = L.layerGroup().addTo(routeMap);
   const ll = f.map(p => [p.lat, p.lng]);
   routeLayer = L.polyline(ll, { color: colors[Number(day)] || "#0f766e", weight: 5, opacity: 0.85 }).addTo(routeMap);
   f.forEach(p => {
     const i = points.indexOf(p), isC = p.kind === "charge", c = colors[p.day] || "#0f766e";
-    L.marker([p.lat, p.lng], { icon: L.divIcon({ className: "custom-div-icon", html: `<div style="background:${isC ? "#b88918" : c};color:#fff;width:${isC ? 24 : 30}px;height:${isC ? 24 : 30}px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:850;font-size:${isC ? "13px" : "14px"};border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.3)">${isC ? "电" : i + 1}</div>`, iconSize: [36, 36], iconAnchor: [18, 18] }) }).bindPopup(`<strong>${p.name}</strong>`).addTo(markerGroup);
+    L.marker([p.lat, p.lng], { icon: makeRouteIcon(isC ? "#b88918" : c, isC ? "电" : String(i + 1), isC ? 24 : 30) }).bindPopup(`<strong>${p.name}</strong>`).addTo(markerGroup);
+  });
+  const filteredPois = pois.filter(p => activePoiKinds.has(p.kind) && (activeDay === "all" || p.day === Number(activeDay)));
+  filteredPois.forEach(p => {
+    L.marker([p.lat, p.lng], { icon: makePoiIcon(p.kind) }).bindPopup(`<strong>${poiColors[p.kind].icon} ${p.name}</strong><br><small>${p.detail}</small>`).addTo(poiGroup);
   });
   routeMap.fitBounds(L.latLngBounds(ll).pad(0.25));
+}
+
+function togglePoiKind(kind) {
+  if (activePoiKinds.has(kind)) activePoiKinds.delete(kind); else activePoiKinds.add(kind);
+  if (routeMap) { if (poiGroup) routeMap.removeLayer(poiGroup); poiGroup = L.layerGroup().addTo(routeMap);
+    const filteredPois = pois.filter(p => activePoiKinds.has(p.kind) && (activeDay === "all" || p.day === Number(activeDay)));
+    filteredPois.forEach(p => { L.marker([p.lat, p.lng], { icon: makePoiIcon(p.kind) }).bindPopup(`<strong>${poiColors[p.kind].icon} ${p.name}</strong><br><small>${p.detail}</small>`).addTo(poiGroup); });
+  }
 }
 
 function bindFilters() {
@@ -212,6 +271,10 @@ function bindFilters() {
     document.querySelectorAll(".filter-button").forEach(x => x.classList.remove("is-active"));
     b.classList.add("is-active");
     filterMap(b.dataset.day);
+  }));
+  document.querySelectorAll(".poi-toggle").forEach(b => b.addEventListener("click", () => {
+    b.classList.toggle("is-off");
+    togglePoiKind(b.dataset.kind);
   }));
 }
 

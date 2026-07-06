@@ -559,6 +559,53 @@ h3 {
   line-height: 1.55;
 }
 
+/* --- POI Legend --- */
+.poi-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-top: 1px solid var(--line);
+  background: #fbfcf9;
+}
+
+.legend-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 750;
+  margin-right: 2px;
+}
+
+.poi-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.poi-toggle.is-off {
+  opacity: 0.45;
+  background: #f0f0f0;
+  border-style: dashed;
+}
+
+.poi-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
 @media (max-width: 1180px) {
   .app-shell {
     grid-template-columns: 1fr;
