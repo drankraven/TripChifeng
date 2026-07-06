@@ -462,17 +462,10 @@ h3 {
   background: var(--teal);
 }
 
-.offline-map {
+.leaflet-map-container {
   flex: 1;
   min-height: 520px;
-  padding: 16px;
   background: #edf2ee;
-}
-
-.offline-map svg {
-  width: 100%;
-  height: 100%;
-  display: block;
 }
 
 .map-bg {
@@ -554,6 +547,11 @@ h3 {
     top: 0;
     order: -1;
     height: 72vh;
+    min-height: 480px;
+  }
+
+  .leaflet-map-container {
+    min-height: 400px;
   }
 }
 
@@ -568,7 +566,7 @@ h3 {
   }
 
   .map-panel {
-    min-height: 560px;
+    min-height: 400px;
   }
 
   .map-header,

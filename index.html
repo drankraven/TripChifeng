@@ -5,44 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="从巴林左旗出发，游览赤峰境内辽上京、达达线（贡格尔草原/白音敖包/达里诺尔湖/阿斯哈图石林）、热阿线（黄岗梁林海）、热水塘温泉、乌兰布统草原，7月7日周二到7月10日周五中午返回沈阳的4天纯电自驾路书。含达达线与热阿线详细公路攻略。"
+      content="从巴林左旗出发，游览达达线（贡格尔草原/白音敖包/达里诺尔湖/阿斯哈图石林）、热阿线（黄岗梁）、热水塘温泉、乌兰布统草原。7月7日周二到7月10日周五中午沈阳。星图云交互地图+纯电补能策略。"
     />
-    <title>巴林左旗出发·赤峰境内 4 天自驾路书（7.7-7.10）| 达达线·热阿线详解</title>
+    <title>巴林左旗→达达线→热阿线→乌兰布统→沈阳 · 4天纯电路书（7.7-7.10）</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   </head>
   <body>
     <main class="app-shell">
       <section class="planner">
         <header class="masthead">
-          <p class="eyebrow">Chifeng roadbook v3</p>
+          <p class="eyebrow">Chifeng roadbook v4 — live map</p>
           <h1>巴林左旗 → 达达线 → 热阿线 → 乌兰布统 → 沈阳 · 4 天纯电自驾</h1>
           <p class="lede">
-            基于冷三岁 @赤峰景点地图 实地数据修订。跳过大板镇绕行，将节省的 2.5 h 投入达达线慢游体验；D2 提前 06:30 出发，达达线从「赶路」改为「公路旅行」，逐段标注停车点。每条景观大道（达达线 / 热阿线）均附详细路况说明。
+            D1 不再悠闲、D2 不再紧张：把达里诺尔湖移到 D1 傍晚（看日落！），让 D2 专心走达达线+石林+热阿线。每天约 200-250 km 总驾驶量，不算太累但覆盖了辽文化、草原公路、地质奇观、温泉和草原日落。
           </p>
           <div class="stats" aria-label="路线概览">
-            <div><strong>4 天 3 晚</strong><span>7.7 周二 – 7.10 周五</span></div>
-            <div><strong>约 1100 km</strong><span>全程估算</span></div>
-            <div><strong>达达线 + 热阿线全收</strong><span>两条景观公路详解</span></div>
+            <div><strong>4 天 3 晚</strong><span>7.7 周二 – 7.10 周五中午到沈阳</span></div>
+            <div><strong>约 1100 km</strong><span>日均 275 km · 不算累</span></div>
+            <div><strong>达达线 + 热阿线全收</strong><span>星图云交互地图 + 纯电补能</span></div>
           </div>
         </header>
 
         <section class="section-block">
-          <div class="section-heading"><p class="eyebrow">Key decisions</p><h2>本次修订要点</h2></div>
+          <div class="section-heading"><p class="eyebrow">Why this route</p><h2>这次怎么取舍的</h2></div>
           <div class="insight-grid">
             <article class="insight">
-              <span class="tag">跳过大板</span>
-              <h3>D1 不再绕行巴林右旗</h3>
-              <p>大板镇的荟福寺虽在冷三岁重点14个内，但属小型寺庙（~1 h 游览），往返多跑 85 km + 耗时 2.5 h。4 天行程中这些时间更应给达达线和乌兰布统。若未来专程走巴林右旗再补荟福寺+召庙真寂之寺。</p>
+              <span class="tag">D1←达里诺尔</span>
+              <h3>傍晚游湖看日落，当晚住湖边</h3>
+              <p>原版 D1 下午到经棚就没事了，D2 却要从经棚跑 80 km 到达里诺尔再绕回来。现在把达里诺尔湖移到 D1 傍晚，既解决了 D1"太闲"的问题，又让 D2 一早就站在达达线起点上——不用回头路。</p>
             </article>
             <article class="insight">
-              <span class="tag">达达线慢游</span>
-              <h3>D2 从 06:30 出发，达达线给足 3.5 h</h3>
-              <p>原计划达达线 135 km 只给 2.5 h（54 km/h 平均，几乎不停），实际这条公路本身就是头号景点！现在分配 3.5 h：白音敖包沙地云杉停 30 min + 风车阵/弯道/牛羊群随时停。冷三岁原图也注明"如果玩达里湖 +0.5 天"。</p>
+              <span class="tag">达达线·4h 慢游</span>
+              <h3>达达线是公路旅行，不是赶路</h3>
+              <p>达里诺尔→石林的 135 km 分配整整 4 小时停车拍照：白音敖包沙地云杉 30 min、弯道牛羊群、风车阵。原计划 2.5h 只是"过路"，现在才叫"走达达线"。</p>
             </article>
             <article class="insight">
               <span class="tag">热阿线 = 小独库</span>
-              <h3>傍晚走热阿线北段进热水塘</h3>
-              <p>热阿线与达达线风格截然不同——盘山弯路、森林峡谷、海拔爬升 1500→2000 m。D2 傍晚走石林→黄岗梁→热水塘段（约 80 km 热阿线），光线正好；D3 早回头补黄岗梁晨光。</p>
+              <h3>盘山弯路+森林峡谷+温泉收官</h3>
+              <p>热阿线 82 km 与达达线风格完全不同——多弯盘山路、海拔 1500 爬升到 2029 m、白桦林变针叶林再变高山草甸。D2 下午走光线正好，D3 早上还能补拍黄岗梁晨雾。</p>
             </article>
           </div>
         </section>
@@ -53,50 +55,57 @@
         </section>
 
         <section class="section-block">
-          <div class="section-heading"><p class="eyebrow">Charging</p><h2>纯电补能计划</h2></div>
+          <div class="section-heading"><p class="eyebrow">Charging</p><h2>纯电补能计划 · 经棚是命门</h2></div>
           <div id="charging" class="charge-grid"></div>
           <div class="notice">
-            ⚡ 核心逻辑：<b>经棚镇</b>是全程唯一靠谱的城镇级补能点，D1 到后必须补满、D3 回来必须再补。<br>
-            ⚠️ 达里诺尔/达达线沿线/阿斯哈图/乌兰布统一带充电桩极度稀缺或没有，<b>绝对不要把电量赌在景区里</b>。<br>
-            💡 出发前一天用高德地图新能源/国网 e 充电/特来电确认经棚和围场的站点状态。
+            ⚡ <b>补能逻辑一句话：全靠经棚镇。</b>达里诺尔/达达线/石林/热阿线/乌兰布统——这些景区里<b>没有充电桩</b>。<br>
+            🟢 D1 经棚补满 → D2 全程跑完到热水塘（约 225 km，纯电 300 km 续航刚好）<br>
+            🟢 D3 热水塘回经棚补满 → D3+D4 乌兰布统+返程围场
+          </div>
+        </section>
+
+        <!-- 温泉住宿推荐 -->
+        <section class="section-block">
+          <div class="section-heading"><p class="eyebrow">Hotels</p><h2>🏨 热水塘温泉酒店推荐</h2></div>
+          <div class="info-grid" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
+            <div class="info-box">
+              <h3 style="font-size:1rem;">🥇 蓝天温泉大酒店</h3>
+              <p style="margin:4px 0;">热水塘镇地标，房间直供 24h 矿泉热水。位置正中心，吃饭补能方便。¥350-550/晚</p>
+              <span class="tag" style="background:var(--rust);margin:8px 0 0;">招牌老店</span>
+            </div>
+            <div class="info-box">
+              <h3 style="font-size:1rem;">🥈 金狮龙沐湾温泉酒店</h3>
+              <p style="margin:4px 0;">设施较新，温泉池多，有室内私汤房型。评价"服务好、水干净"。¥400-650/晚</p>
+              <span class="tag" style="background:var(--teal);margin:8px 0 0;">推荐·私汤</span>
+            </div>
+            <div class="info-box">
+              <h3 style="font-size:1rem;">🥉 天牧温泉小镇</h3>
+              <p style="margin:4px 0;">度假村式，户外汤池视野好，性价比高。适合在热水塘多待半天的人。¥300-450/晚</p>
+              <span class="tag" style="background:var(--blue);margin:8px 0 0;">性价比</span>
+            </div>
+            <div class="info-box">
+              <h3 style="font-size:1rem;">💰 林西县替代方案</h3>
+              <p style="margin:4px 0;">热水塘贵/满房时的备选。林西县城距热水塘 30 km，酒店多且便宜 ¥120-200/晚，有快充桩。第二天开到热水塘泡个日归汤再走。</p>
+              <span class="tag" style="background:var(--gold);margin:8px 0 0;">省钱备选</span>
+            </div>
+          </div>
+          <div style="margin-top:12px;padding:10px 14px;border-radius:8px;background:#fffaf0;border:1px solid var(--line);font-size:88%;color:var(--muted);line-height:1.55;">
+            💡 更多选择（可在携程/美团搜）：<b>颐和康养温泉酒店</b>（康养主题，适合长辈）、<b>锦澜温泉酒店</b>（中档、房间新）、<b>中泰酒店热水店</b>（经济型）。<br>
+            ⚠️ 7-8 月旺季建议<span style="color:var(--rust);font-weight:700;">提前 1-2 周订房</span>，尤其周末！热水塘总共就十来家温泉酒店，满房很快。
           </div>
         </section>
 
         <section class="section-block">
-          <div class="section-heading"><p class="eyebrow">Tips</p><h2>实用提示</h2></div>
-          <div class="info-grid">
-            <div class="info-box">
-              <h3>达达线 vs 热阿线对比</h3>
-              <p><b>达达线</b>(135km)：平坦草原公路，视野开阔，"Windows桌面"感，适合放松慢开随时停。<br><b>热阿线</b>(82km)：盘山弯路+"小独库"，森林峡谷层次丰富，驾驶乐趣强但需集中注意力。</p>
-            </div>
-            <div class="info-box">
-              <h3>省钱小技巧（来自实地经验）</h3>
-              <p>① 达里诺尔湖可不买 ¥120 门票，找牧民野路到湖边约 ¥20；② 乌兰布统不买 ¥120 通票也可路过看景（时间不够时）；③ 热水塘住宿贵可改住林西县。</p>
-            </div>
-            <div class="info-box">
-              <h3>旺季住宿预警</h3>
-              <p>7-8 月热水塘温泉酒店和乌兰布统木屋/蒙古包极紧，建议提前 1-2 周订房。围场县作为备选性价比高且桩靠谱。</p>
-            </div>
-          </div>
-
-          <!-- 地图 API 说明 -->
-          <div style="margin-top:18px;padding:16px;border-radius:8px;background:#f0f9ff;border:1px solid #bae6fd;">
-            <h3 style="margin-bottom:8px;font-size:0.95rem;">🗺️ 关于地图</h3>
-            <p style="margin:0;color:#0369a1;font-size:88%;line-height:1.6;">
-              当前使用本地 SVG 经纬度示意图（右侧面板），不依赖任何在线服务或 API Key。<br>
-              如需升级为交互式路线地图（可拖拽缩放、实时路况叠加、充电站图层），可选方案：<br>
-              • <b>高德地图 JS API</b>（国内最准的充电桩+路况数据，免费额度 30 万次/日，需申请 Key）<br>
-              • <b>腾讯地图 JS API</b>（你已有腾讯系 connector，接入方便）<br>
-              • <b>Leaflet + OpenStreetMap</b>（完全免费开源，无需 Key，但国内细节不如高德）<br>
-              需要哪种方案告诉我，我可以帮你集成并申请对应 API Key。
-            </p>
-          </div>
+          <div class="section-heading"><p class="eyebrow">Map</p><h2>🗺️ 地图说明</h2></div>
+          <p style="color:var(--muted);line-height:1.7;font-size:92%;margin:0;">
+            右侧地图使用 <b>星图云（GeoVis Earth）</b> 矢量瓦片（token 已配置），支持缩放拖拽。点击标记查看详情，顶部按钮按 D1-D4 筛选。底图数据来自星图云开放平台。
+          </p>
         </section>
       </section>
 
       <aside class="map-panel">
         <div class="map-header">
-          <div><p class="eyebrow">Offline map</p><h2>本地路线示意</h2></div>
+          <div><p class="eyebrow">Live map · GeoVis</p><h2>交互路线地图</h2></div>
           <div class="day-filter" aria-label="按天查看路线">
             <button class="filter-button is-active" data-day="all">全程</button>
             <button class="filter-button" data-day="1">D1</button>
@@ -105,9 +114,9 @@
             <button class="filter-button" data-day="4">D4</button>
           </div>
         </div>
-        <div id="map" class="offline-map"></div>
+        <div id="leaflet-map" class="leaflet-map-container"></div>
         <div class="map-note">
-          SVG 本地示意图，显示节点顺序与相对方位。达达线（D2）与热阿线（D2-D3）为克什克腾两大景观大道。实际驾驶请以导航 App 当天结果为准。
+          底图：星图云矢量瓦片（token: 228***de23） | 可拖拽缩放 | 按 D1-D4 筛选查看每日路线
         </div>
       </aside>
     </main>
